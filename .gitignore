@@ -1,0 +1,19 @@
+# Ignorar bases de dados muito pesadas e imagens
+dataset_imagens/
+jpeg/
+jpg/
+*.zip
+
+# O data.csv tem apenas 125 KB, então ele pode ir para o Git sem problemas,
+# mas grandes volumes de imagens ou arquivos zipados de gigabytes vão travar o push.
+
+# Pastas de controle do Jupyter Notebook e Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Ignorar ambientes virtuais (caso crie no futuro)
+venv/
+env/
+.env
+
