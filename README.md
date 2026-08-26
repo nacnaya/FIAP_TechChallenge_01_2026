@@ -27,10 +27,15 @@ Foi realizada a leitura da base estruturada, removendo colunas sem importância 
 A estatística descritiva (médias, mínimos, máximos) revelou que as variáveis possuíam escalas numéricas drasticamente diferentes (ex: `area_mean` possuía valores muito altos comparados à `smoothness_mean`).
 Geramos também uma **Matriz de Correlação** mapeada por Heatmap, identificando alta colinearidade entre algumas features de tamanho (como raio e perímetro), o que é esperado do ponto de vista fisiológico.
 
+![Matriz de Correlação](analise_correlacao.png)
+
 ### 2. Estratégias de Pré-processamento
 - **Tratamento de Categóricas:** Conversão da variável alvo (`diagnosis`) de texto ('M', 'B') para inteiros binários (`1` para Maligno, `0` para Benigno).
 - **Separação Treino/Teste:** Divisão de 80% dos dados para treino e 20% para teste, utilizando o parâmetro `stratify=y` para garantir que a proporção de casos malignos e benignos se mantivesse idêntica em ambos os conjuntos, evitando viés de amostragem.
 - **Padronização (Scaling):** Devido à diferença de escala identificada na EDA, foi aplicado o `StandardScaler`. O escalonador foi ajustado (`fit`) **apenas nos dados de treino**, e aplicado (`transform`) nos dados de teste. Isso preveniu o *data leakage* (vazamento de informações do futuro para o treino).
+
+![Antes da Padronização](Antes.png)
+![Depois da Padronização](depois.png)
 
 ### 3. Modelos Usados e Porquê
 Para garantir confiabilidade diagnóstica, construímos e comparamos duas abordagens:
@@ -43,12 +48,15 @@ Os modelos foram validados em dados cegos usando métricas clínicas cruciais:
 *   **Recall (Sensibilidade):** A métrica mais importante neste contexto médico. Ela responde: *"De todos os casos que eram realmente câncer maligno, quantos a IA conseguiu pegar?"*. Falsos negativos custam vidas.
 *   **F1-Score:** Equilíbrio harmônico entre precisão e recall.
 
-*(Nota: Adicione aqui os valores finais obtidos após rodar o notebook)*
 * **Resultados Regressão Logística:** Accuracy: 96.49%, Recall: 92.86%, F1-Score: 95.12%
 * **Resultados Random Forest:** Accuracy: 97.37%, Recall: 92.86%, F1-Score: 96.30%
 
+![Matriz de Confusão](matriz_confusa.png)
+
 **Explicabilidade com SHAP:** 
 Como um médico precisa confiar no algoritmo, aplicamos a biblioteca SHAP (SHapley Additive exPlanations) no modelo Random Forest. O modelo não é uma "caixa-preta". O *Summary Plot* do SHAP comprovou quais características do núcleo celular (como os pontos côncavos, perímetro e área) tiveram maior peso e orientaram matematicamente a IA para concluir que o tumor era maligno.
+
+![Gráfico SHAP](shape.png)
 
 ---
 
@@ -68,10 +76,15 @@ Como um médico precisa confiar no algoritmo, aplicamos a biblioteca SHAP (SHapl
 5. Execute as células sequencialmente em `tech_challenge.ipynb`.
 
 **Opção 2: Via Docker (Recomendado)**
-*(Nota: Instruções de Docker aqui caso crie o arquivo)*
-1. Construa a imagem: `docker build -t fiap-tech-challenge .`
-2. Rode o container: `docker run -p 8888:8888 fiap-tech-challenge`
-3. Acesse o link no terminal.
+1. Construa a imagem: 
+   ```bash
+   docker build -t fiap-tech-challenge .
+   ```
+2. Rode o container: 
+   ```bash
+   docker run -p 8888:8888 fiap-tech-challenge
+   ```
+3. Acesse o link gerado no terminal para abrir o Jupyter Notebook.
 
 ---
 **Vídeo de Demonstração:** [Insira aqui o Link do YouTube/Vimeo]
