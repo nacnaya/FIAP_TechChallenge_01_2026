@@ -14,9 +14,9 @@ Uma rede de hospitais especializada na saúde da mulher necessita de um sistema 
 
 - `tech_challenge.ipynb`: Notebook principal contendo todo o pipeline de Machine Learning com dados tabulares (limpeza, EDA, padronização, treinamento e validação).
 - `modelo_cnn_imagens.ipynb`: Notebook (EXTRA) contendo o desenvolvimento da Rede Neural Convolucional (CNN) para o diagnóstico por meio de imagens médicas.
-- `data.csv`: Base de dados tabulares utilizada no projeto principal (Breast Cancer Wisconsin).
-- `/dataset_imagens/` e arquivos `.zip`: Dados de imagem para a CNN. *(Nota: Estes arquivos não foram versionados no Git devido ao grande volume de dados. O download deve ser feito no Kaggle).* **Fonte original (Sugerida):** [CBIS-DDSM Breast Cancer Image Dataset - Kaggle](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset)
-- `Dockerfile`: Configuração de contêiner para execução isolada do ambiente, garantindo a reprodutibilidade.
+- `data.csv`: Base de dados tabular utilizada no desafio principal. **Fonte:** [Diagnóstico de câncer de mama (maligno ou benigno) - Kaggle](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/data)
+- `/dataset_imagens/` e arquivos `.zip`: Dados para o modelo EXTRA de Visão Computacional. *(Nota: Não versionados no Git devido ao limite de tamanho).* **Fonte:** [Detecção de câncer de mama em mamografias (CBIS-DDSM) - Kaggle](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset)
+- `Dockerfile`: Configuração de contêiner para execução isolada do ambiente.
 
 ---
 
