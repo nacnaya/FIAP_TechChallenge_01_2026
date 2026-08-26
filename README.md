@@ -15,8 +15,8 @@ Uma rede de hospitais especializada na saúde da mulher necessita de um sistema 
 - `tech_challenge.ipynb`: Notebook principal contendo todo o pipeline de Machine Learning com dados tabulares (limpeza, EDA, padronização, treinamento e validação).
 - `modelo_cnn_imagens.ipynb`: Notebook (EXTRA) contendo o desenvolvimento da Rede Neural Convolucional (CNN) para o diagnóstico por meio de imagens médicas.
 - `data.csv`: Base de dados tabulares utilizada no projeto principal (Breast Cancer Wisconsin).
-- `/dataset_imagens/`: Diretórios e arquivos `.zip` referentes aos dados de imagem para a CNN.
-- `Dockerfile` *(se aplicável)*: Configuração de contêiner para execução isolada do ambiente.
+- `/dataset_imagens/` e arquivos `.zip`: Dados de imagem para a CNN. *(Nota: Estes arquivos não foram versionados no Git devido ao grande volume de dados. O download deve ser feito no Kaggle).* **Fonte original (Sugerida):** [CBIS-DDSM Breast Cancer Image Dataset - Kaggle](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset)
+- `Dockerfile`: Configuração de contêiner para execução isolada do ambiente, garantindo a reprodutibilidade.
 
 ---
 
@@ -44,8 +44,8 @@ Os modelos foram validados em dados cegos usando métricas clínicas cruciais:
 *   **F1-Score:** Equilíbrio harmônico entre precisão e recall.
 
 *(Nota: Adicione aqui os valores finais obtidos após rodar o notebook)*
-* **Resultados Regressão Logística:** Accuracy: XX%, Recall: XX%, F1-Score: XX%
-* **Resultados Random Forest:** Accuracy: XX%, Recall: XX%, F1-Score: XX%
+* **Resultados Regressão Logística:** Accuracy: 96.49%, Recall: 92.86%, F1-Score: 95.12%
+* **Resultados Random Forest:** Accuracy: 97.37%, Recall: 92.86%, F1-Score: 96.30%
 
 **Explicabilidade com SHAP:** 
 Como um médico precisa confiar no algoritmo, aplicamos a biblioteca SHAP (SHapley Additive exPlanations) no modelo Random Forest. O modelo não é uma "caixa-preta". O *Summary Plot* do SHAP comprovou quais características do núcleo celular (como os pontos côncavos, perímetro e área) tiveram maior peso e orientaram matematicamente a IA para concluir que o tumor era maligno.
