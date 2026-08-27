@@ -113,11 +113,11 @@ As variáveis com maior correlação com o diagnóstico foram:
 - `radius_mean`;
 - `area_mean`.
 
-![Principais correlações com o diagnóstico](imagens_resultados/04_principais_correlacoes_diagnostico.png)
+![Principais correlações com o diagnóstico](imagens_resultados/05_principais_correlacoes.png)
 
-![Matriz de correlação completa](imagens_resultados/05_matriz_correlacao_completa.png)
+![Matriz de correlação completa](imagens_resultados/04_matriz_correlacao_completa.png)
 
-![Matriz das principais variáveis](imagens_resultados/06_matriz_correlacao_principais_variaveis.png)
+![Matriz das principais variáveis](imagens_resultados/06_matriz_correlacao_principais.png)
 
 ### 3. Estratégias de pré-processamento
 
@@ -171,13 +171,7 @@ O **recall da classe maligna** recebeu atenção especial, pois um falso negativ
 
 ### Matrizes de confusão
 
-![Matriz de confusão da Regressão Logística](imagens_resultados/09_matriz_confusao_regressao_logistica.png)
-
-![Matriz de confusão do KNN](imagens_resultados/09_matriz_confusao_knn.png)
-
-![Matriz de confusão da Árvore de Decisão](imagens_resultados/09_matriz_confusao_arvore_de_decisao.png)
-
-![Matriz de confusão do Random Forest](imagens_resultados/09_matriz_confusao_random_forest.png)
+![Matrizes de confusão dos modelos](imagens_resultados/09_matrizes_confusao_modelos.png)
 
 ### Curvas ROC
 
@@ -222,7 +216,7 @@ class_weight = balanced
 
 A otimização aumentou o recall de 92,86% para 95,24%.
 
-![Matriz de confusão do modelo final](imagens_resultados/12_matriz_confusao_modelo_final.png)
+![Matriz de confusão do modelo final](imagens_resultados/13_matriz_confusao_modelo_final.png)
 
 ---
 
@@ -234,17 +228,17 @@ A importância por permutação mede quanto o desempenho diminui quando os valor
 
 Entre as características mais relevantes estão `texture_worst`, `concavity_worst`, `symmetry_worst`, `concave points_worst`, `concave points_mean` e `radius_worst`.
 
-![Importância por permutação](imagens_resultados/13_importancia_permutacao.png)
+![Importância por permutação](imagens_resultados/14_importancia_permutacao.png)
 
 ### SHAP
 
 O SHAP foi utilizado para apresentar a importância global, a direção do impacto das variáveis e uma explicação individual de um caso maligno.
 
-![Importância global SHAP](imagens_resultados/14_shap_importancia_global.png)
+![Importância global SHAP](imagens_resultados/shap_importancia_global.png)
 
-![SHAP Beeswarm](imagens_resultados/15_shap_beeswarm.png)
+![SHAP Beeswarm](imagens_resultados/shap_beeswarm.png)
 
-![Explicação individual SHAP](imagens_resultados/16_shap_waterfall_individual.png)
+![Explicação individual SHAP](imagens_resultados/17_shap_waterfall_individual.png)
 
 ---
 
