@@ -125,7 +125,7 @@ As variáveis com maior correlação com o diagnóstico foram:
 - **Separação treino/teste:** 80% dos registros foram utilizados no treinamento e 20% no teste.
 - **Estratificação:** foi utilizado `stratify=y` para preservar a proporção das classes.
 - **Reprodutibilidade:** foi definido `random_state=42`.
-- **Padronização:** o `StandardScaler` foi ajustado somente nos dados de treinamento e aplicado posteriormente ao conjunto de teste, evitando _data leakage_.
+- **Padronização:** o `StandardScaler` foi ajustado somente nos dados de treinamento e aplicado posteriormente ao conjunto de teste, evitando *data leakage*.
 
 A divisão resultou em 455 registros para treinamento e 114 registros para teste.
 
@@ -160,12 +160,12 @@ O **recall da classe maligna** recebeu atenção especial, pois um falso negativ
 
 ## 📊 Resultados dos Modelos
 
-| Modelo              | Accuracy | Precision | Recall | F1-score | ROC-AUC |
-| ------------------- | -------: | --------: | -----: | -------: | ------: |
-| Regressão Logística |   96,49% |    97,50% | 92,86% |   95,12% |  99,60% |
-| Random Forest       |   96,49% |   100,00% | 90,48% |   95,00% |  99,42% |
-| KNN                 |   95,61% |    97,44% | 90,48% |   93,83% |  98,23% |
-| Árvore de Decisão   |   92,11% |    94,59% | 83,33% |   88,61% |  94,48% |
+| Modelo | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Regressão Logística | 96,49% | 97,50% | 92,86% | 95,12% | 99,60% |
+| Random Forest | 96,49% | 100,00% | 90,48% | 95,00% | 99,42% |
+| KNN | 95,61% | 97,44% | 90,48% | 93,83% | 98,23% |
+| Árvore de Decisão | 92,11% | 94,59% | 83,33% | 88,61% | 94,48% |
 
 ![Comparação das métricas](imagens_resultados/08_comparacao_metricas_modelos.png)
 
@@ -212,13 +212,13 @@ class_weight = balanced
 
 ### Resultado do modelo final
 
-| Métrica   | Resultado |
-| --------- | --------: |
-| Accuracy  |    97,37% |
-| Precision |    97,56% |
-| Recall    |    95,24% |
-| F1-score  |    96,39% |
-| ROC-AUC   |    99,54% |
+| Métrica | Resultado |
+|---|---:|
+| Accuracy | 97,37% |
+| Precision | 97,56% |
+| Recall | 95,24% |
+| F1-score | 96,39% |
+| ROC-AUC | 99,54% |
 
 A otimização aumentou o recall de 92,86% para 95,24%.
 
@@ -258,13 +258,13 @@ As imagens foram redimensionadas para `150 × 150` pixels. Na execução registr
 - 247 imagens para validação;
 - 10 épocas.
 
-| Métrica  | Treinamento | Validação |
-| -------- | ----------: | --------: |
-| Accuracy |      95,32% |    58,70% |
-| Recall   |      93,38% |    64,17% |
-| Loss     |      0,1379 |    1,7940 |
+| Métrica | Treinamento | Validação |
+|---|---:|---:|
+| Accuracy | 95,32% | 58,70% |
+| Recall | 93,38% | 64,17% |
+| Loss | 0,1379 | 1,7940 |
 
-A diferença entre treinamento e validação indica **overfitting**. Portanto, a CNN é apresentada como experimento complementar, com possibilidades futuras de aplicar _data augmentation_, `Dropout`, `EarlyStopping`, _transfer learning_ e uma base maior e mais equilibrada.
+A diferença entre treinamento e validação indica **overfitting**. Portanto, a CNN é apresentada como experimento complementar, com possibilidades futuras de aplicar *data augmentation*, `Dropout`, `EarlyStopping`, *transfer learning* e uma base maior e mais equilibrada.
 
 ---
 
