@@ -125,7 +125,7 @@ As variáveis com maior correlação com o diagnóstico foram:
 - **Separação treino/teste:** 80% dos registros foram utilizados no treinamento e 20% no teste.
 - **Estratificação:** foi utilizado `stratify=y` para preservar a proporção das classes.
 - **Reprodutibilidade:** foi definido `random_state=42`.
-- **Padronização:** o `StandardScaler` foi ajustado somente nos dados de treinamento e aplicado posteriormente ao conjunto de teste, evitando *data leakage*.
+- **Padronização:** o `StandardScaler` foi ajustado somente nos dados de treinamento e aplicado posteriormente ao conjunto de teste, evitando _data leakage_.
 
 A divisão resultou em 455 registros para treinamento e 114 registros para teste.
 
@@ -160,12 +160,12 @@ O **recall da classe maligna** recebeu atenção especial, pois um falso negativ
 
 ## 📊 Resultados dos Modelos
 
-| Modelo | Accuracy | Precision | Recall | F1-score | ROC-AUC |
-|---|---:|---:|---:|---:|---:|
-| Regressão Logística | 96,49% | 97,50% | 92,86% | 95,12% | 99,60% |
-| Random Forest | 96,49% | 100,00% | 90,48% | 95,00% | 99,42% |
-| KNN | 95,61% | 97,44% | 90,48% | 93,83% | 98,23% |
-| Árvore de Decisão | 92,11% | 94,59% | 83,33% | 88,61% | 94,48% |
+| Modelo              | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+| ------------------- | -------: | --------: | -----: | -------: | ------: |
+| Regressão Logística |   96,49% |    97,50% | 92,86% |   95,12% |  99,60% |
+| Random Forest       |   96,49% |   100,00% | 90,48% |   95,00% |  99,42% |
+| KNN                 |   95,61% |    97,44% | 90,48% |   93,83% |  98,23% |
+| Árvore de Decisão   |   92,11% |    94,59% | 83,33% |   88,61% |  94,48% |
 
 ![Comparação das métricas](imagens_resultados/08_comparacao_metricas_modelos.png)
 
@@ -206,13 +206,13 @@ class_weight = balanced
 
 ### Resultado do modelo final
 
-| Métrica | Resultado |
-|---|---:|
-| Accuracy | 97,37% |
-| Precision | 97,56% |
-| Recall | 95,24% |
-| F1-score | 96,39% |
-| ROC-AUC | 99,54% |
+| Métrica   | Resultado |
+| --------- | --------: |
+| Accuracy  |    97,37% |
+| Precision |    97,56% |
+| Recall    |    95,24% |
+| F1-score  |    96,39% |
+| ROC-AUC   |    99,54% |
 
 A otimização aumentou o recall de 92,86% para 95,24%.
 
@@ -252,13 +252,13 @@ As imagens foram redimensionadas para `150 × 150` pixels. Na execução registr
 - 247 imagens para validação;
 - 10 épocas.
 
-| Métrica | Treinamento | Validação |
-|---|---:|---:|
-| Accuracy | 95,32% | 58,70% |
-| Recall | 93,38% | 64,17% |
-| Loss | 0,1379 | 1,7940 |
+| Métrica  | Treinamento | Validação |
+| -------- | ----------: | --------: |
+| Accuracy |      95,32% |    58,70% |
+| Recall   |      93,38% |    64,17% |
+| Loss     |      0,1379 |    1,7940 |
 
-A diferença entre treinamento e validação indica **overfitting**. Portanto, a CNN é apresentada como experimento complementar, com possibilidades futuras de aplicar *data augmentation*, `Dropout`, `EarlyStopping`, *transfer learning* e uma base maior e mais equilibrada.
+A diferença entre treinamento e validação indica **overfitting**. Portanto, a CNN é apresentada como experimento complementar, com possibilidades futuras de aplicar _data augmentation_, `Dropout`, `EarlyStopping`, _transfer learning_ e uma base maior e mais equilibrada.
 
 ---
 
@@ -317,6 +317,24 @@ Para executar o EXTRA localmente, instale também:
 ```bash
 pip install "numpy<2.0.0" tensorflow==2.17.0 pillow
 ```
+
+### Opção 4: Script automático (Windows)
+
+Para facilitar a execução no Windows sem precisar digitar comandos Docker manualmente, o repositório inclui o script `projeto.bat`.
+
+O script verifica se o Docker está instalado e em execução, constrói a imagem, inicia o container automaticamente em uma porta livre, aguarda o Jupyter ficar pronto e abre o navegador sozinho já no endereço correto (com o token de acesso incluído).
+
+**Como usar:**
+
+1. Dê duplo clique em `projeto.bat` (ou execute-o pelo terminal).
+2. No menu exibido, escolha:
+   - `[1]` **Iniciar projeto** — constrói a imagem (se necessário), inicia o container e abre o Jupyter automaticamente no navegador.
+   - `[2]` **Encerrar projeto** — para o container em execução.
+   - `[3]` **Verificar status** — mostra se o Docker está ativo e se o projeto está rodando (e em qual porta).
+   - `[4]` **Sair**
+3. Quando terminar de usar o notebook, volte ao script e escolha `[2]` para encerrar o container.
+
+> O script detecta automaticamente uma porta livre no seu computador, então não há conflito caso a porta 8888 já esteja em uso por outro programa.
 
 ---
 
