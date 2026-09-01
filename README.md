@@ -382,5 +382,5 @@ O modelo de imagens demonstrou a possibilidade de aplicar uma CNN ao problema, m
 Adicionar o link após a publicação:
 
 ```text
-LINK_DO_VIDEO
+https://www.youtube.com/watch?v=tn2XRHDf70M
 ```
