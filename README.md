@@ -379,8 +379,6 @@ O modelo de imagens demonstrou a possibilidade de aplicar uma CNN ao problema, m
 
 ## 🎥 Vídeo de Demonstração
 
-Adicionar o link após a publicação:
-
 ```text
 https://www.youtube.com/watch?v=tn2XRHDf70M
 ```
